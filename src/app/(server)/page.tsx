@@ -1,9 +1,12 @@
-import Image from "next/image";
-import { UserButton } from "@clerk/nextjs";
-import { ModeToggle } from "@/components/mood-toggle";
+
 import { initialProfile } from "@/lib/initial-profile";
 import db from "@/lib/db";
 import { redirect } from "next/navigation";
+import InitialModal from "@/components/modals/initialModal";
+
+
+
+
 
 export default async function Home() {
   const profile = await initialProfile();
@@ -23,15 +26,13 @@ export default async function Home() {
   }
 
   return (
-    <main className="flex min-h-screen justify-start gap-6 p-14">
-      Home
-      <div>
-        <UserButton afterSignOutUrl="/" />
-      </div>
-      <div>
-        <ModeToggle />
-      </div>
-      <div>create a new server</div>
-    </main>
-  );
+    
+    <div>
+      <InitialModal />
+    </div>
+
+
+
+    
+    );
 }

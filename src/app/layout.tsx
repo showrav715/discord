@@ -19,10 +19,11 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <body className={cn(font.className, "bg-white dark:bg-[#313338]")}>
           <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
+           attribute="class"
+           defaultTheme="dark"
+           forcedTheme="dark"
+           enableSystem={false}
+           storageKey="discord-theme"
           >
             {children}
           </ThemeProvider>
